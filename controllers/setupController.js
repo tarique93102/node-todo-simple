@@ -1,3 +1,4 @@
+// api setup to add some basic values at the creation of database
 var Todos = require('../models/todoModel');
 
 module.exports = function (app) {

@@ -7,8 +7,10 @@ var apiController = require('./controllers/apiController');
 
 var port = process.env.PORT || 3000;
 
+// setting path for calling static files
 app.use('/', express.static(__dirname + '/public'));
 
+// setting the view engine by default
 app.set('view engine', 'ejs');
 
 // connects to mongo database
@@ -21,6 +23,7 @@ db.once('open', function () {
     console.log('Database connection established');
 });
 
+// calling the segregated api calls
 setupController(app);
 apiController(app);
 
